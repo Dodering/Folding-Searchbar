@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barre de Recherche</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #searchContainer {
+      display: flex;
+      align-items: center;
+    }
+
+    #searchInput {
+      padding: 10px;
+      border: none;
+      border-radius: 15px 0 0 15px; /* Coins droits à 0 pour le coin droit de la barre de saisie */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 0;
+      overflow: hidden;
+      transition: width 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    #searchInput:focus {
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #searchButton {
+      padding: 10px;
+      background-color: #fff;
+      color: white;
+      border: none;
+      border-radius: 0 15px 15px 0; /* Coins gauches à 0 pour le coin gauche du bouton de recherche */
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #searchButton:hover {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<div id="searchContainer">
+  <input type="text" id="searchInput" placeholder="Rechercher..." readonly>
+  <button onclick="search()" id="searchButton">🔍</button>
+</div>
+
+<script>
+  function search() {
+    var searchTerm = document.getElementById('searchInput').value;
+    console.log("Recherche en cours : " + searchTerm);
+    // Ajoutez ici le code pour effectuer une recherche réelle
+  }
+</script>
+
+</body>
+</html>
